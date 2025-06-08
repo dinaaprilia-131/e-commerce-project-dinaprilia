@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D'STORE</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1b7ff; 
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #e69ff0;
+      padding: 1rem 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .cart-icon {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #e4a6ee; 
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .products {
+      padding: 2rem 1rem;
+    }
+
+    .products h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .product-card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card p {
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card button {
+      background-color: #FFC5D3; 
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .product-card button:hover {
+      background-color: #f8cbfc; 
+    }
+
+    .about {
+      background-color: #ffe1ff; 
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .about h2 {
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background-color: #FFC5D3; 
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">D'STORE</h1>
+      <ul class="nav-links">
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Produk</a></li>
+        <li><a href="#">Keranjang</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+      <div class="cart-icon">
+        🛒
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Selamat Datang di D'STORE</h2>
+      <p>Rawat dirimu dengan produk terbaik dari D'STORE. Skincare, Make Up, Bodycare, dan Haircare pilihan untuk kecantikan alami setiap hari.</p>
+    </section>
+
+    <section class="products">
+      <h2>Produk Terbaru</h2>
+      <div class="product-grid">
+        <article class="product-card">
+          <img src="SKINCARE.jpg" alt="Skincare D'STORE">
+          <h3>Skincare</h3>
+          <p>Bye Jerawat, Hello Glowing Skin.</p>
+          <p><strong>Rp.300.000</strong></p>
+          <button onclick="addToCart('Skincare', 300000)">Beli</button>
+        </article>
+        <article class="product-card">
+          <img src="MAKEUP.jpg" alt="Make Up D'STORE">
+          <h3>Make Up</h3>
+          <p> Percaya Diri Dimulai Dari Riasan Sempurna.</p>
+          <p><strong>Rp200.000</strong></p>
+          <button onclick="addToCart('Make Up', 200000)">Beli</button>
+        </article>
+        <article class="product-card">
+          <img src="BODYCARE.jpg" alt="Bodycare D'STORE">
+          <h3>Bodycare</h3>
+          <p>Perawatan Tubuh Mewah di Rumah Sendiri.</p>
+          <p><strong>Rp225.000</strong></p>
+          <button onclick="addToCart('Bodycare', 225000)">Beli</button>
+        </article>
+        <article class="product-card">
+          <img src="HAIRCARE.jpg" alt="Hair Care D'STORE">
+          <p>Hair Care</p>
+            <p>Perawatan Rambut Intensif, Hasil Salon di Rumah.</p>
+            <p><strong>Rp350.000</strong></p>
+          <button onclick="addToCart('Hair Care', 350000)">Beli</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>Tentang Kami</h2>
+      <p>D'STORE adalah rumah bagi kamu yang ingin cantik luar-dalam. Kami menghadirkan skincare, makeup, bodycare, dan haircare pilihan, semuanya oridinal, aman, dan terjangkau. Karena, cantik itu hak semua orang.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Nama: Neng Dina Aprilia</p>
+    <p>Kelas dan Jurusan: Administrasi Bisnis [ABI 2]</p>
+    <p>Gmail: <a herf="ndnaaprilia@gmail.com">ndnaaaprilia@gmail.com</a></p>
+    <p>&copy; 2025 D'STORE, All right reserved.</p>
+  </footer>
+
+   <script>
+    function addToCart(productName, productPrice) {
+      alert(Produk ${productName} dengan harga Rp${productPrice.toLocaleString('id-ID')} telah ditambahkan ke keranjang.);
+    }
+  </script>
+</body>
+</html>
